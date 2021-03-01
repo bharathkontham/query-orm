@@ -1,0 +1,29 @@
+{
+  "name": "search-orm",
+  "version": "1.0.0",
+  "description": "Loopback like ORM built to work with any node.js framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bharathkontham/search-orm.git"
+  },
+  "keywords": [
+    "orm",
+    "odm",
+    "elasticsearch",
+    "loopback"
+  ],
+  "author": {
+    "name": "Bharath Reddy Kontham",
+    "email": "bharath2211@gmail.com",
+    "url": "https://github.com/bharathkontham"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bharathkontham/search-orm/issues"
+  },
+  "homepage": "https://github.com/bharathkontham/search-orm#readme"
+}
