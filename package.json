@@ -4,7 +4,8 @@
   "description": "Loopback like ORM built to work with any node.js framework.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/bharathkontham/search-orm/issues"
   },
-  "homepage": "https://github.com/bharathkontham/search-orm#readme"
+  "homepage": "https://github.com/bharathkontham/search-orm#readme",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "jsonschema": "^1.4.0",
+    "ramda": "^0.27.1"
+  }
 }

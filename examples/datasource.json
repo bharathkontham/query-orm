@@ -1,0 +1,8 @@
+{
+  "myuserdatasource": {
+    "name": "myuserdatasource",
+    "settings": {},
+    "connector": "./esconnector.js",
+    "localConnector": true
+  }
+}
