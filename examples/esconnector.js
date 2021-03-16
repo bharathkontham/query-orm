@@ -1,13 +1,10 @@
-class Test {
-  constructor(obj) {
-    this.connectorConfig = obj;
-    this.settings = obj.settings;
-    this.init(this.connectorConfig);
-  }
-
-  init(connectorConfig) {
-    return connectorConfig.name;
+class ESConnector {
+  constructor (modelDefinition, dataSource) {
+    this.settings = dataSource.settings;
+    this.modelIdField = modelDefinition.id.property;
+    this.idGenerated = modelDefinition.id.generated;
+    this.modelSchema = modelDefinition.schema;
   }
 }
 
-module.exports = Test;
+module.exports = ESConnector;

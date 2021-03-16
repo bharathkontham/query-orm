@@ -5,8 +5,7 @@
   "validations": {},
   "id": {
     "property": "userId",
-    "generated": true,
-    "generator": ""
+    "generated": true
   },
   "schema": {
     "type": "object",

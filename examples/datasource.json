@@ -1,7 +1,91 @@
 {
   "myuserdatasource": {
     "name": "myuserdatasource",
-    "settings": {},
+    "settings": {
+      "indexName": "testormuser",
+      "isAlias": false,
+      "mapping": {
+        "docType": {
+          "type": "keyword"
+        },
+        "userId": {
+          "type": "keyword"
+        },
+        "username": {
+          "type": "keyword"
+        },
+        "tenantId": {
+          "type": "keyword"
+        },
+        "firstname": {
+          "type": "keyword"
+        },
+        "lastname": {
+          "type": "keyword"
+        },
+        "roles": {
+          "type": "keyword"
+        },
+        "roleId": {
+          "type": "keyword"
+        },
+        "roleName": {
+          "type": "keyword"
+        },
+        "departmentId": {
+          "type": "keyword"
+        },
+        "departmentName": {
+          "type": "keyword"
+        },
+        "email": {
+          "type": "keyword"
+        },
+        "mobile": {
+          "type": "keyword"
+        },
+        "mfa": {
+          "type": "object",
+          "enabled": false
+        },
+        "consent": {
+          "type": "object",
+          "enabled": false
+        },
+        "isSecondaryUser": {
+          "type": "boolean"
+        },
+        "secondaryUserInfo": {
+          "type": "object",
+          "enabled": false
+        },
+        "userStoreDomain": {
+          "type": "keyword"
+        }
+      },
+      "createIndex": true,
+      "updateMapping": true,
+      "version": 7,
+      "configuration": {
+        "nodes": ["https://localhost:9200"],
+        "requestTimeout": 30000,
+        "pingTimeout": 3000,
+        "auth": {
+          "username": "admin",
+          "password": "admin"
+        },
+        "agent": {
+          "maxSockets": 1,
+          "keepAlive": false
+        },
+        "ssl": {
+          "rejectUnauthorized": false
+        },
+        "sniffInterval": 10000
+      },
+      "number_of_shards": 2,
+      "number_of_replicas": 2
+    },
     "connector": "./esconnector.js",
     "localConnector": true
   }

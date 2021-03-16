@@ -7,6 +7,10 @@ const myormapp = new ORM({
   dataSources: './datasource.json'
 });
 
-console.log(myormapp.modelConfig);
-console.log(myormapp.models.User.name);
-console.log(myormapp.models.User.schema);
+// console.log(myormapp.modelConfig);
+// console.log(myormapp.models.User.name);
+myormapp.models.User.findById('asdasd').then((v) => {
+  console.log(v);
+}).catch((e) => {
+  console.log(e);
+});
