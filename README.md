@@ -1,4 +1,4 @@
-# search-orm
+# query-orm
 
 Loopback like ORM built to work with any node.js framework.
 
@@ -15,7 +15,7 @@ Loopback like ORM built to work with any node.js framework.
   "where": {},
   "limit": 100,
   "skip": 2, // offset
-  "search_after": [], // optional for pagination
+  "searchafter": [], // optional for pagination
   "order": [], // [] or ""
   "fields": [], // [] or ""
   "include": [], // [] or "" for relations

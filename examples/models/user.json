@@ -1,7 +1,6 @@
 {
   "name": "User",
   "plural": "users",
-  "dataSource": "myuserdatasource",
   "validations": {},
   "id": {
     "property": "userId",

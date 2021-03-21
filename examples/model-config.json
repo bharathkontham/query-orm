@@ -2,7 +2,7 @@
   "directory": "./models",
   "models": {
     "User": {
-      "dataSource": "myuserdatasource"
+      "dataSource": "esdatasource"
     }
   }
 }

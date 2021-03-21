@@ -1,5 +1,5 @@
 {
-  "name": "search-orm",
+  "name": "query-orm",
   "version": "1.0.0",
   "description": "Loopback like ORM built to work with any node.js framework.",
   "main": "index.js",
@@ -9,13 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bharathkontham/search-orm.git"
+    "url": "https://github.com/bharathkontham/query-orm.git"
   },
   "keywords": [
     "orm",
     "odm",
     "elasticsearch",
-    "loopback"
+    "loopback",
+    "query-orm",
+    "query",
+    "dsl"
   ],
   "author": {
     "name": "Bharath Reddy Kontham",
@@ -24,15 +27,16 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bharathkontham/search-orm/issues"
+    "url": "https://github.com/bharathkontham/query-orm/issues"
   },
-  "homepage": "https://github.com/bharathkontham/search-orm#readme",
+  "homepage": "https://github.com/bharathkontham/query-orm#readme",
   "devDependencies": {
     "eslint": "^7.21.0",
     "standard": "^16.0.3"
   },
   "dependencies": {
     "jsonschema": "^1.4.0",
+    "query-orm-connector-elastic": "^1.0.0",
     "ramda": "^0.27.1"
   }
 }
