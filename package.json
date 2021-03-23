@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "jsonschema": "^1.4.0",
-    "query-orm-connector-elastic": "^1.0.0",
     "ramda": "^0.27.1"
   }
 }

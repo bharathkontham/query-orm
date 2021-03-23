@@ -1,8 +1,0 @@
-{
-  "directory": "./models",
-  "models": {
-    "User": {
-      "dataSource": "esdatasource"
-    }
-  }
-}
