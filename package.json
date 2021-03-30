@@ -1,6 +1,6 @@
 {
   "name": "query-orm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Loopback like ORM built to work with any node.js framework.",
   "main": "index.js",
   "scripts": {
