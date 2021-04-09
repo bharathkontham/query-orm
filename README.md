@@ -9,6 +9,7 @@ Loopback like ORM built to work with any node.js framework.
 * [Filters](#filters)
 * [Relations](#relations)
 * [Connectors](#connectors)
+* [Operational Hooks](#operationalhooks)
 
 ## Installation
 
@@ -354,3 +355,58 @@ NA. Coming soon.
 ## Connectors
 
 * [Elasticsearch](https://www.npmjs.com/package/query-orm-connector-elastic)
+
+## Operational Hooks
+
+### before save
+This hook will be triggered before execute of methods (create, updateById and updateByQuery).
+
+Example:
+
+```javascript
+  //create
+  Model.observe('before save', async (instance) => {
+    instance.foo = 'bar1';
+    return Promise.resolve();
+  })
+  
+    //update
+  Model.observe('before save', async (data) => {
+    // data.id, data.attributes, data.where are available w.r.t method
+    return Promise.resolve();
+  })
+```
+
+### after save
+This hook will be triggered after execute of methods (create, updateById and updateByQuery).
+
+Example:
+
+```javascript
+  Model.observe('after save', async (result) => {
+    return Promise.resolve();
+  })
+```
+
+### before delete
+This hook will be triggered before execute of methods (deleteById and deleteByQuery).
+
+Example:
+
+```javascript
+  Model.observe('before delete', async (data) => {
+    // data.id, data.attributes, data.where are available w.r.t method
+    return Promise.resolve();
+  })
+```
+
+### after delete
+This hook will be triggered after execute of methods (deleteById and deleteByQuery).
+
+Example:
+
+```javascript
+  Model.observe('after delete', (result) => {
+    return Promise.resolve();
+  })
+```
