@@ -9,7 +9,7 @@ Loopback like ORM built to work with any node.js framework.
 * [Filters](#filters)
 * [Relations](#relations)
 * [Connectors](#connectors)
-* [Operational Hooks](#operationalhooks)
+* [OperationalHooks](#operationalhooks)
 
 ## Installation
 
@@ -356,7 +356,7 @@ NA. Coming soon.
 
 * [Elasticsearch](https://www.npmjs.com/package/query-orm-connector-elastic)
 
-## Operational Hooks
+## OperationalHooks
 
 ### before save
 This hook will be triggered before execute of methods (create, updateById and updateByQuery).
