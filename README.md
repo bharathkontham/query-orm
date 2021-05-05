@@ -383,7 +383,8 @@ This hook will be triggered after execute of methods (create, updateById and upd
 Example:
 
 ```javascript
-  Model.observe('after save', async (result) => {
+  Model.observe('after save', async (ctx) => {
+    //ctx.instance will be result and isNewInstance is also available on ctx
     return Promise.resolve();
   })
 ```
@@ -406,7 +407,8 @@ This hook will be triggered after execute of methods (deleteById and deleteByQue
 Example:
 
 ```javascript
-  Model.observe('after delete', (result) => {
+  Model.observe('after delete', (ctx) => {
+    //ctx.instance will be result
     return Promise.resolve();
   })
 ```
