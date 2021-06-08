@@ -350,7 +350,7 @@ It supports **and** and **or** queries.
 
 ## Relations
 
-NA. Coming soon.
+* [Relations](https://github.com/bharathkontham/query-orm/blob/main/relation.md)
 
 ## Connectors
 
