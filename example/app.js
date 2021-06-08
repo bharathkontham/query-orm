@@ -18,31 +18,60 @@ app.on('model-init', (d) => {
   // }
 });
 
-(async ()=>{
+(async () => {
   const user = await app.models['User'].create({
-    "username":"naveena",
-    "firstname":"naveena",
-    "lastname":"ch",
-    "password":"Naveena@1"
+    "username": "naveena",
+    "firstname": "naveena",
+    "lastname": "ch",
+    "password": "Naveena@1"
   })
   console.log("===========user=======================")
   console.log(user)
+
+
   const order = await app.models['User'].relations.orders.create('WxtL5nkBSDSEpNGM7l1m', {
-    name:"frock"
+    name: "frock"
   })
   console.log("====================order====================")
   console.log(order)
-  const orders = await app.models['User'].relations.orders.find('WxtL5nkBSDSEpNGM7l1m',{})
+
+
+  const orders = await app.models['User'].relations.orders.find('WxtL5nkBSDSEpNGM7l1m', {})
   console.log("====================ordersss====================")
   console.log(orders)
-  const user = await app.models['User'].find({include:"orders"})
- console.log("========================user include orders=============================")
- console.log(JSON.stringify(user))
+
+
+  const user = await app.models['User'].find({
+    include: "orders"
+  })
+  console.log("========================user include orders=============================")
+  console.log(JSON.stringify(user))
+
+
+  const belongsToUser = await app.models['Order'].relations.user.findOne(user[0].userId)
+  console.log("========================Order relational user=============================")
+  console.log(belongsToUser)
+
+
+  const orderWithUser = await app.models['Order'].find({
+    include: "user"
+  })
+  console.log("========================order include user=============================")
+  console.log(JSON.stringify(orderWithUser))
+
+
+  const order = await app.models.Order.create({
+    name: "shirt"
+  })
+
+
+  const OrderUser = await app.models.Order.relations.user.setOrCreate(order.id, 'WxtL5nkBSDSEpNGM7l1m')
+  console.log(OrderUser)
+
+  
 })()
 
 
 app.on('error', (e) => {
   console.log('error', e);
 });
-
-
