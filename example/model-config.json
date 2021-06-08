@@ -1,0 +1,11 @@
+{
+  "directory": "./models",
+  "models": {
+    "User": {
+      "dataSource": "testdatasource"
+    },
+    "Order": {
+      "dataSource": "orderdatasource"
+    }
+  }
+}

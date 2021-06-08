@@ -1,0 +1,122 @@
+{
+  "testdatasource": {
+    "name": "testdatasource",
+    "settings": {
+      "indexName": "testindex",
+      "isAlias": false,
+      "isPattern": false,
+      "mappings": {
+        "properties": {
+          "docType": {
+            "type": "keyword"
+          },
+          "userId": {
+            "type": "keyword"
+          },
+          "username": {
+            "type": "keyword"
+          },
+          "firstname": {
+            "type": "keyword"
+          },
+          "lastname": {
+            "type": "keyword"
+          },
+          "password": {
+            "type": "keyword"
+          },
+          "created": {
+            "type": "date"
+          },
+          "updated": {
+            "type": "date"
+          }
+        }
+      },
+      "aliases": {},
+      "indexSettings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 2
+      },
+      "createIndex": true,
+      "updateMapping": true,
+      "version": 7,
+      "defaultLimit": 200,
+      "configuration": {
+        "nodes": [
+          "http://localhost:9200"
+        ],
+        "requestTimeout": 30000,
+        "pingTimeout": 3000,
+        "auth": {
+          "username": "admin",
+          "password": "admin"
+        },
+        "agent": {
+          "maxSockets": 1,
+          "keepAlive": false
+        },
+        "ssl": {
+          "rejectUnauthorized": false
+        },
+        "sniffInterval": 10000
+      }
+    },
+    "connector": "query-orm-connector-elastic",
+    "localConnector": false
+  },
+  "orderdatasource": {
+    "name": "orderdatasource",
+    "settings": {
+      "indexName": "orderindex",
+      "isAlias": false,
+      "isPattern": false,
+      "mappings": {
+        "properties": {
+          "docType": {
+            "type": "keyword"
+          },
+          "userId": {
+            "type": "keyword"
+          },
+          "name": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "keyword"
+          }
+        }
+      },
+      "aliases": {},
+      "indexSettings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 2
+      },
+      "createIndex": true,
+      "updateMapping": true,
+      "version": 7,
+      "defaultLimit": 200,
+      "configuration": {
+        "nodes": [
+          "http://localhost:9200"
+        ],
+        "requestTimeout": 30000,
+        "pingTimeout": 3000,
+        "auth": {
+          "username": "admin",
+          "password": "admin"
+        },
+        "agent": {
+          "maxSockets": 1,
+          "keepAlive": false
+        },
+        "ssl": {
+          "rejectUnauthorized": false
+        },
+        "sniffInterval": 10000
+      }
+    },
+    "connector": "query-orm-connector-elastic",
+    "localConnector": false
+  }
+}
