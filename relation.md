@@ -5,6 +5,7 @@ Loopback like ORM built to work with any node.js framework.
 [![npm version](https://badge.fury.io/js/query-orm.svg)](https://www.npmjs.com/package/query-orm)
 
 - [query-orm relations](#query-orm-relations)
+  - [Definition](#definition)
   - [hasMany](#hasmany)
     - [hasMany-find](#hasmany-find)
     - [hasMany-create](#hasmany-create)
@@ -18,7 +19,20 @@ Loopback like ORM built to work with any node.js framework.
   - [belongsTo](#belongsto)
     - [belongsTo-findOne](#belongsto-findone)
     - [belongsTo-setOrCreate](#belongsto-setorcreate)
-  
+
+## Definition
+
+Model.json
+```
+...
+relations: {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    }
+}
+```
 ## hasMany
 
 Refer example at (https://github.com/bharathkontham/query-orm/tree/main/example)
