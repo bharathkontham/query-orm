@@ -19,6 +19,11 @@ Loopback like ORM built to work with any node.js framework.
   - [belongsTo](#belongsto)
     - [belongsTo-findOne](#belongsto-findone)
     - [belongsTo-setOrCreate](#belongsto-setorcreate)
+  - [hasManyThrough](#hasManyThrough)
+    - [hasManyThrough-find](#hasManyThrough-add)
+    - [hasManyThrough-create](#hasManyThrough-remove)
+    - [hasManyThrough-find](#hasManyThrough-find)
+    - [hasManyThrough-deleteByQuery](#hasManyThrough-deletebyquery)
 
 ## Definition
 
@@ -30,6 +35,23 @@ relations: {
       "type": "belongsTo",
       "model": "User",
       "foreignKey": "userId"
+    },
+    "workers": {
+      "type": "hasManyThrough",
+      "model": "User",
+      "foreignKey": "storeId",
+      "through": "WorkStore",
+      "keyThrough": "userId"
+    }
+}
+
+relations: {
+    "workers": {
+      "type": "hasManyThrough",
+      "model": "User",
+      "foreignKey": "storeId",
+      "through": "WorkStore",
+      "keyThrough": "userId"
     }
 }
 ```
@@ -142,4 +164,54 @@ Model.relations.property.setOrCreate(modelFromId, relationId, data(optional))
 Example
 ```
 Order.realtions.user.setOrCreate(orderId, userId, data)
+```
+
+## hasManyThrough
+
+Refer example at (https://github.com/bharathkontham/query-orm/tree/main/example)
+
+A hasManyThrough relation builds a many-to-many connection between two models with through model.
+
+** If User model has hasMany relation with Store model and also Store has many realtion with User **
+
+### hasMany-find
+
+Model.relations.property.find(relationId, filter)
+
+Example - list workers associated with store 
+```
+Store.realtions.workers.find(storeId, filter)
+```
+
+Example - list user working stores.
+```
+User.realtions.workingStores.find(userId, filter)
+```
+
+### hasManyThrough-add
+
+Model.relations.property.add(relationId, anothermodelRelationId)
+
+Example - Adding user as worker in store 
+```
+Store.realtions.workers.add(storeId, userId)
+```
+
+### hasManyThrough-remove
+
+Model.relations.property.remove(relationId, anothermodelRelationId)
+
+Example - Remove worker user from store
+```
+Store.realtions.workers.remove(storeId, userId)
+```
+
+### hasMany-deleteByQuery
+
+Model.relations.property.deleteByQuery(relationId, where)
+where clause on through model only
+
+Example - remove all worker users from store
+```
+Store.realtions.workers.deleteByQuery(storeId, where)
 ```

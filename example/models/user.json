@@ -46,6 +46,13 @@
       "type": "hasMany",
       "model": "Order",
       "foreignKey": "userId"
+    },
+    "workingStores": {
+      "type": "hasManyThrough",
+      "model": "Store",
+      "foreignKey": "userId",
+      "through": "WorkStore",
+      "keyThrough": "storeId"
     }
   }
 }

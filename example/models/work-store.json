@@ -1,0 +1,38 @@
+{
+  "name": "WorkStore",
+  "plural": "workstores",
+  "validations": {
+    "composite": ["userId", "storeId"]
+  },
+  "id": {
+    "property": "id",
+    "generated": true
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "userId": {
+        "type": "string"
+      },
+      "storeId": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      }
+    },
+    "required": []
+  },
+  "relations": {
+    "worker": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    },
+    "store": {
+      "type": "belongsTo",
+      "model": "Store",
+      "foreignKey": "storeId"
+    }
+  }
+}

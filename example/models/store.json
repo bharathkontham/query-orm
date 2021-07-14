@@ -1,0 +1,30 @@
+{
+  "name": "Store",
+  "plural": "stores",
+  "validations": {},
+  "id": {
+    "property": "id",
+    "generated": true
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      }
+    },
+    "required": []
+  },
+  "relations": {
+    "workers": {
+      "type": "hasManyThrough",
+      "model": "User",
+      "foreignKey": "storeId",
+      "through": "WorkStore",
+      "keyThrough": "userId"
+    }
+  }
+}

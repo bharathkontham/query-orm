@@ -104,3 +104,8 @@ dist
 .tern-port
 
 rough-doc
+
+example/node_modules/
+example/package-lock.json
+
+.vscode

@@ -2,10 +2,16 @@
   "directory": "./models",
   "models": {
     "User": {
-      "dataSource": "testdatasource"
+      "dataSource": "userdatasource"
     },
     "Order": {
       "dataSource": "orderdatasource"
+    },
+    "Store": {
+      "dataSource": "storedatasource"
+    },
+    "WorkStore": {
+      "dataSource": "workstoredatasource"
     }
   }
 }
