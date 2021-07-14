@@ -1,8 +1,8 @@
 {
-  "testdatasource": {
-    "name": "testdatasource",
+  "userdatasource": {
+    "name": "userdatasource",
     "settings": {
-      "indexName": "testindex",
+      "indexName": "userindex",
       "isAlias": false,
       "isPattern": false,
       "mappings": {
@@ -44,7 +44,7 @@
       "defaultLimit": 200,
       "configuration": {
         "nodes": [
-          "http://localhost:9200"
+          "https://localhost:9200"
         ],
         "requestTimeout": 30000,
         "pingTimeout": 3000,
@@ -98,7 +98,112 @@
       "defaultLimit": 200,
       "configuration": {
         "nodes": [
-          "http://localhost:9200"
+          "https://localhost:9200"
+        ],
+        "requestTimeout": 30000,
+        "pingTimeout": 3000,
+        "auth": {
+          "username": "admin",
+          "password": "admin"
+        },
+        "agent": {
+          "maxSockets": 1,
+          "keepAlive": false
+        },
+        "ssl": {
+          "rejectUnauthorized": false
+        },
+        "sniffInterval": 10000
+      }
+    },
+    "connector": "query-orm-connector-elastic",
+    "localConnector": false
+  },
+  "storedatasource": {
+    "name": "storedatasource",
+    "settings": {
+      "indexName": "storeindex",
+      "isAlias": false,
+      "isPattern": false,
+      "mappings": {
+        "properties": {
+          "docType": {
+            "type": "keyword"
+          },
+          "name": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "keyword"
+          }
+        }
+      },
+      "aliases": {},
+      "indexSettings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 2
+      },
+      "createIndex": true,
+      "updateMapping": true,
+      "version": 7,
+      "defaultLimit": 200,
+      "configuration": {
+        "nodes": [
+          "https://localhost:9200"
+        ],
+        "requestTimeout": 30000,
+        "pingTimeout": 3000,
+        "auth": {
+          "username": "admin",
+          "password": "admin"
+        },
+        "agent": {
+          "maxSockets": 1,
+          "keepAlive": false
+        },
+        "ssl": {
+          "rejectUnauthorized": false
+        },
+        "sniffInterval": 10000
+      }
+    },
+    "connector": "query-orm-connector-elastic",
+    "localConnector": false
+  },
+  "workstoredatasource": {
+    "name": "workstoredatasource",
+    "settings": {
+      "indexName": "workstoreindex",
+      "isAlias": false,
+      "isPattern": false,
+      "mappings": {
+        "properties": {
+          "docType": {
+            "type": "keyword"
+          },
+          "userId": {
+            "type": "keyword"
+          },
+          "storeId": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "keyword"
+          }
+        }
+      },
+      "aliases": {},
+      "indexSettings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 2
+      },
+      "createIndex": true,
+      "updateMapping": true,
+      "version": 7,
+      "defaultLimit": 200,
+      "configuration": {
+        "nodes": [
+          "https://localhost:9200"
         ],
         "requestTimeout": 30000,
         "pingTimeout": 3000,
